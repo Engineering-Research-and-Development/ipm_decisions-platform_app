@@ -1,32 +1,25 @@
-import { Component } from '@angular/core';
-import { DirectusService } from './directus.service';
+import { Component, OnInit } from '@angular/core';
+import { CockpitService } from './cockpit.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  title = 'demo';
-  about = "";
-  pages = [];
+  headerHtml = "";
+  footerHtml = "";
 
   constructor(
-    private directusService: DirectusService
+    private cockpitService: CockpitService
   ) { }
 
-  ngOnInit() {
-    this.directusService
-      .getAbout()
-      .then((about) => {
-        this.about = about;
-      });
-    this.directusService
-      .getPages()
-      .then((pages) => {
-        this.pages = pages;
-      });
+  ngOnInit(): void {
+    this.cockpitService.getHeader()
+      .then( headerHtml => this.headerHtml = headerHtml );
+    this.cockpitService.getFooter()
+      .then( footerHtml => this.footerHtml = footerHtml );
   }
 
 }
