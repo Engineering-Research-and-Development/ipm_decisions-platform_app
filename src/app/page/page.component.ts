@@ -23,7 +23,7 @@ export class PageComponent implements OnInit {
     this.cockpitService
       .getPageById(id)
       .then(payload => {
-        this.content = payload.Content;
+        this.content = payload.content;
       })
   }
 

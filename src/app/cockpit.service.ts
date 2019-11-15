@@ -56,9 +56,9 @@ export class CockpitService {
 
   getPageTitles() {
     return this.http
-      .post(this.cockpitApiUrl + '/api/collections/get/Pages', {
+      .post(this.cockpitApiUrl + '/api/collections/get/pages', {
         fields: {
-          Title: true
+          title: true
         }
       }, {
         headers: {
@@ -73,7 +73,7 @@ export class CockpitService {
 
   getPageById(id) {
     return this.http
-      .post(this.cockpitApiUrl + '/api/collections/get/Pages', {
+      .post(this.cockpitApiUrl + '/api/collections/get/pages', {
         filter: {
           _id: id
         }

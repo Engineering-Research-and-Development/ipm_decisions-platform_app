@@ -2,6 +2,6 @@
 <br>
 <mat-list>
     <mat-list-item *ngFor="let page of pages">
-        <a routerLink="/page/{{page._id}}" [state]="page?.Content">{{page?.Title}}</a>
+        <a routerLink="/page/{{page._id}}" [state]="page?.content">{{page?.title}}</a>
     </mat-list-item>
 </mat-list>
