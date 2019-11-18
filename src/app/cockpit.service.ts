@@ -17,7 +17,7 @@ export class CockpitService {
 
   getAbout() {
     return this.http
-      .get(this.cockpitApiUrl + '/api/singletons/get/About', {
+      .get(this.cockpitApiUrl + '/api/singletons/get/about', {
         headers: {
           'Cockpit-Token': this.cockpitToken
         }
